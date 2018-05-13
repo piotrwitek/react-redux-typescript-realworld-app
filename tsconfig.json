@@ -30,13 +30,13 @@
     "removeComments": true,
     "sourceMap": true
   },
+  "include": ["src/**/*", "typings/*"],
   "exclude": [
     "node_modules",
+    "src/**/*.spec.*",
     "build",
     "scripts",
-    "acceptance-tests",
     "webpack",
-    "jest",
     "src/setupTests.ts"
   ]
 }

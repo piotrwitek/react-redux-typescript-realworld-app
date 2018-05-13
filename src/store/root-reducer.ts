@@ -13,7 +13,7 @@ export interface RootState {
   todos: TodosState;
 }
 
-export const rootReducer = combineReducers<RootState, RootAction>({
+export default combineReducers<RootState, RootAction>({
   router: routerReducer,
   todos: todosReducer,
 });
