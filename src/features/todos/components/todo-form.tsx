@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import { RootState } from '../../../store';
-import { actions } from '../';
+import { todosActions } from '../';
 
 type Props = {
   addTodo: (title: string) => any;
@@ -46,5 +46,5 @@ class TodoForm extends React.Component<Props, State> {
 const mapStateToProps = (state: RootState) => ({});
 
 export default connect(mapStateToProps, {
-  addTodo: (title: string) => actions.add({ title }),
+  addTodo: (title: string) => todosActions.add({ title }),
 })(TodoForm);

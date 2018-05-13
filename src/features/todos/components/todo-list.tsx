@@ -2,11 +2,11 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import { RootState } from '../../../store';
-import { models, actions, selectors } from '../';
+import { todosModels, todosActions, todosSelectors } from '../';
 import TodoItem from './todo-item';
 
 interface Props {
-  todos: models.Todo[];
+  todos: todosModels.Todo[];
   toggleTodo: (id: string) => any;
 }
 
@@ -29,9 +29,9 @@ const getStyle = (): React.CSSProperties => ({
 });
 
 const mapStateToProps = (state: RootState) => ({
-  todos: selectors.getFilteredTodos(state.todos),
+  todos: todosSelectors.getFilteredTodos(state.todos),
 });
 
 export default connect(mapStateToProps, {
-  toggleTodo: (id: string) => actions.toggle({ id }),
+  toggleTodo: (id: string) => todosActions.toggle({ id }),
 })(TodoList);

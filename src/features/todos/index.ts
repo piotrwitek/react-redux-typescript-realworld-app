@@ -1,6 +1,13 @@
-// public API
-import * as models from './models';
-import * as actions from './actions';
-import reducer, { TodosState, TodosAction } from './reducer';
-import * as selectors from './selectors';
-export { models, actions, selectors, reducer, TodosState, TodosAction };
+import * as todosModels from './models';
+import * as todosActions from './actions';
+import todosReducer, { TodosState, TodosAction } from './reducer';
+import * as todosSelectors from './selectors';
+
+export {
+  todosModels,
+  todosActions,
+  todosSelectors,
+  todosReducer,
+  TodosState,
+  TodosAction,
+};

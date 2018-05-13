@@ -1,6 +1,6 @@
 import { RouterAction, LocationChangeAction } from 'react-router-redux';
-type ReactRouterAction = RouterAction | LocationChangeAction;
 
 import { TodosAction } from '../features/todos';
 
+type ReactRouterAction = RouterAction | LocationChangeAction;
 export type RootAction = ReactRouterAction | TodosAction;

@@ -2,13 +2,13 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import { RootState } from '../../../store';
-import { models, actions, selectors } from '../';
+import { todosModels, todosActions, todosSelectors } from '../';
 const {
   TodosFilter: { All, Active, Completed },
-} = models;
+} = todosModels;
 
 interface Props {
-  currentFilter: models.TodosFilter;
+  currentFilter: todosModels.TodosFilter;
   changeFilter: (id: string) => void;
 }
 
@@ -44,9 +44,9 @@ const getStyle = (active: boolean): React.CSSProperties => ({
 });
 
 const mapStateToProps = (state: RootState) => ({
-  currentFilter: selectors.getTodosFilter(state.todos),
+  currentFilter: todosSelectors.getTodosFilter(state.todos),
 });
 
 export default connect(mapStateToProps, {
-  changeFilter: actions.changeFilter,
+  changeFilter: todosActions.changeFilter,
 })(TodoFilters);
