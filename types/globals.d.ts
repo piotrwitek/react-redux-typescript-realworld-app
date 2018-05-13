@@ -8,3 +8,4 @@ declare interface NodeModule {
 }
 
 declare const process: any;
+declare const require: any;

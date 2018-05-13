@@ -6,11 +6,11 @@ import { models, actions, selectors } from '../';
 import TodoItem from './todo-item';
 
 interface Props {
-  todos?: models.Todo[];
-  toggleTodo?: (id: string) => void;
+  todos: models.Todo[];
+  toggleTodo: (id: string) => any;
 }
 
-function TodoList({ todos, toggleTodo }: Props) {
+function TodoList({ todos = [], toggleTodo }: Props) {
   return (
     <ul style={getStyle()}>
       {todos.map(todo => (
@@ -22,7 +22,7 @@ function TodoList({ todos, toggleTodo }: Props) {
   );
 }
 
-const getStyle = () => ({
+const getStyle = (): React.CSSProperties => ({
   textAlign: 'left',
   margin: 'auto',
   width: 200,

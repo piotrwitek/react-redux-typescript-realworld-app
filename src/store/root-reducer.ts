@@ -1,12 +1,12 @@
 import {
   combineReducers,
   Dispatch as ReduxDispatch,
-  Reducer as ReduxReducer
-} from "redux";
-import { routerReducer, RouterState } from "react-router-redux";
+  Reducer as ReduxReducer,
+} from 'redux';
+import { routerReducer, RouterState } from 'react-router-redux';
 
-import { reducer as todosReducer, TodosState } from "../features/todos";
-import { RootAction } from "./root-action";
+import { reducer as todosReducer, TodosState } from '../features/todos';
+import { RootAction } from './root-action';
 
 export interface RootState {
   router: RouterState;
@@ -15,7 +15,7 @@ export interface RootState {
 
 export const rootReducer = combineReducers<RootState, RootAction>({
   router: routerReducer,
-  todos: todosReducer
+  todos: todosReducer,
 });
 
 export type Dispatch = ReduxDispatch<RootAction>;

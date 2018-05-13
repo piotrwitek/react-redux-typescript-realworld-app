@@ -3,41 +3,43 @@ import { connect } from 'react-redux';
 
 import { RootState } from '../../../store';
 import { models, actions, selectors } from '../';
-const { TodosFilter: { All, Active, Completed } } = models;
+const {
+  TodosFilter: { All, Active, Completed },
+} = models;
 
 interface Props {
-  currentFilter?: models.TodosFilter;
-  changeFilter?: (id: models.TodosFilter) => void;
+  currentFilter: models.TodosFilter;
+  changeFilter: (id: string) => void;
 }
 
 const SEPARATOR = ' | ';
 const FILTERS = [All, ' | ', Active, ' | ', Completed];
 
 function TodoFilters({ currentFilter, changeFilter }: Props) {
+  const Button = (idx: number, filter: string) => (
+    <span
+      key={idx}
+      onClick={() => changeFilter(filter)}
+      style={getStyle(filter === currentFilter)}
+    >
+      {filter.toString()}
+    </span>
+  );
+
   return (
     <div>
       {FILTERS.map(
         (filter, idx) =>
-          filter === SEPARATOR ? (
-            SEPARATOR
-          ) : (
-            <span
-              key={idx}
-              onClick={() => changeFilter(filter)}
-              style={getStyle(filter === currentFilter)}
-            >
-              {filter.toString()}
-            </span>
-          )
+          filter === SEPARATOR ? SEPARATOR : Button(idx, filter)
       )}
     </div>
   );
 }
 
-const getStyle = (active: boolean) => ({
+const getStyle = (active: boolean): React.CSSProperties => ({
   cursor: 'pointer',
   ...(active
-    ? { textDecoration: 'underline', fontWeigth: 'bold' }
+    ? { textDecoration: 'underline', fontWeight: 'bold' }
     : { opacity: 0.4 }),
 });
 

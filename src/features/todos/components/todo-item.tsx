@@ -14,7 +14,7 @@ function TodoItem({ item, toggleItem }: Props) {
   );
 }
 
-const getStyle = (completed: boolean) => ({
+const getStyle = (completed: boolean): React.CSSProperties => ({
   overflowX: 'hidden',
   textOverflow: 'ellipsis',
   cursor: 'pointer',

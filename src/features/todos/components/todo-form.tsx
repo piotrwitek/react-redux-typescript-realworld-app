@@ -5,7 +5,7 @@ import { RootState } from '../../../store';
 import { actions } from '../';
 
 type Props = {
-  addTodo?: (title: string) => void;
+  addTodo: (title: string) => any;
 };
 type State = {
   title: string;

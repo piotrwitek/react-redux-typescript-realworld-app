@@ -4,12 +4,12 @@ import { ActionsUnion, getType } from 'typesafe-actions';
 import { Todo, TodosFilter } from './models';
 import * as todos from './actions';
 
+export type TodosAction = ActionsUnion<typeof todos>;
+
 export type TodosState = Readonly<{
   todos: Todo[];
   todosFilter: TodosFilter;
 }>;
-
-export type TodosAction = ActionsUnion<typeof todos>;
 
 export default combineReducers<TodosState, TodosAction>({
   todos: (state = [], action) => {
