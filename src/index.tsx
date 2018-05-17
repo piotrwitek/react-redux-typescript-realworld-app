@@ -4,7 +4,7 @@ import * as React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
-import Home from './routes/home';
+import Home from './pages/home';
 import store from './store';
 
 const styles: React.CSSProperties = {
