@@ -8,6 +8,7 @@
   "license": "MIT",
   "main": "src/index.tsx",
   "scripts": {
+    "reinstall": "rm -rf ./node_modules && yarn install",
     "lint": "tslint -p ./",
     "tsc": "tsc -p ./ --noEmit",
     "tsc:watch": "tsc -p ./ --noEmit -w",
@@ -30,16 +31,16 @@
     "react-redux": "5.0.7",
     "react-router-dom": "4.2.2",
     "react-router-redux": "5.0.0-alpha.9",
-    "react-scripts-ts": "2.13.0",
+    "react-scripts-ts": "2.16.0",
     "redux": "4.0.0",
     "redux-observable": "1.0.0-alpha.2",
     "reselect": "3.0.1",
     "rxjs": "6.1.0",
     "rxjs-compat": "6.1.0",
-    "tslib": "1.9.0",
+    "tslib": "1.9.1",
     "tslint": "5.10.0",
     "tslint-react": "3.6.0",
-    "typesafe-actions": "2.0.0-rc.1",
+    "typesafe-actions": "2.0.1",
     "typescript": "2.8.3"
   },
   "devDependencies": {}

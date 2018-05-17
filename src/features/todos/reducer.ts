@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import { ActionsUnion, getType } from 'typesafe-actions';
+import { ActionType, getType } from 'typesafe-actions';
 
 import { Todo, TodosFilter } from './models';
 import * as todos from './actions';
 
-export type TodosAction = ActionsUnion<typeof todos>;
+export type TodosAction = ActionType<typeof todos>;
 
 export type TodosState = Readonly<{
   todos: Todo[];
