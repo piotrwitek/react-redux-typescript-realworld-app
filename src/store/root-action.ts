@@ -1,4 +1,4 @@
-import { RouterAction, LocationChangeAction } from 'react-router-redux';
+import { RouterAction, LocationChangeAction } from 'connected-react-router';
 
 import { TodosAction } from '../features/todos';
 

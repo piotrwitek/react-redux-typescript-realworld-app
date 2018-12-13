@@ -7,10 +7,15 @@ const {
   TodosFilter: { All, Active, Completed },
 } = todosModels;
 
-interface Props {
+interface PropsFromState {
   currentFilter: todosModels.TodosFilter;
+}
+
+interface PropsFromDispatch {
   changeFilter: (id: string) => void;
 }
+
+type Props = PropsFromState & PropsFromDispatch;
 
 const SEPARATOR = ' | ';
 const FILTERS = [All, ' | ', Active, ' | ', Completed];
@@ -43,10 +48,12 @@ const getStyle = (active: boolean): React.CSSProperties => ({
     : { opacity: 0.4 }),
 });
 
-const mapStateToProps = (state: RootState) => ({
+const mapStateToProps = (state: RootState): PropsFromState => ({
   currentFilter: todosSelectors.getTodosFilter(state.todos),
 });
 
-export default connect(mapStateToProps, {
-  changeFilter: todosActions.changeFilter,
-})(TodoFilters);
+const mapDispatchToProps: PropsFromDispatch = {
+  changeFilter: todosActions.changeFilter as (id: string) => void,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoFilters);

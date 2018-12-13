@@ -8,6 +8,9 @@ export {
   todosActions,
   todosSelectors,
   todosReducer,
-  TodosState,
-  TodosAction,
+  // TodosState,
+  // TodosAction,
 };
+// this is an ugly workaround due to CRA2.1 requiring isolatedModules = true
+export type TodosState = TodosState;
+export type TodosAction = TodosAction;

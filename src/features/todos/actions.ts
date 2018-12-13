@@ -8,9 +8,9 @@ const TOGGLE = 'todos/TOGGLE';
 const CHANGE_FILTER = 'todos/CHANGE_FILTER';
 
 export const add = createStandardAction(ADD).map(
-  (payload: { title: string }) => ({
+  (payload?: { title: string }) => ({
     payload: {
-      title: payload.title || 'New Todo',
+      title: payload!.title || 'New Todo',
       id: cuid(),
       completed: false,
     } as Todo,
