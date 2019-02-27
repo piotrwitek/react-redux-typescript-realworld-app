@@ -9,10 +9,10 @@ export default () => (
     <h3>THIS SANDBOX IS NOW OUTDATED</h3>
 
     <p>There is a  new <b>UP-TO-DATE</b> version (including data fetching examples)
-    located in the <a href="https://github.com/piotrwitek/typesafe-actions">typesafe-actions</a> repo: <a href="https://github.com/piotrwitek/typesafe-actions/tree/master/codesandbox">LINK</a>
+    located in the <code>typesafe-actions</code> repo: <a target="_top" href="https://github.com/piotrwitek/typesafe-actions/tree/master/codesandbox">LINK</a>
     </p>
 
-    <p>And here is a new CodeSandbox: <a href="https://codesandbox.io/s/github/piotrwitek/typesafe-actions/tree/master/codesandbox">LINK</a>
+    <p>And here is a new CodeSandbox: <a target="_top" href="https://codesandbox.io/s/github/piotrwitek/typesafe-actions/tree/master/codesandbox">LINK</a>
     </p>
     <Todos />
   </React.Fragment>
