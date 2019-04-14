@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "react-app",
+    "./node_modules/react-redux-typescript-scripts/eslint.js"
+  ]
+}
