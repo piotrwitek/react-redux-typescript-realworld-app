@@ -1,12 +1,6 @@
 {
-  "include": [
-    "src",
-    "typings"
-  ],
-  "exclude": [
-    "src/**/*.spec.*",
-    "src/setupTests.ts"
-  ],
+  "include": ["src", "typings"],
+  "exclude": ["src/**/*.spec.*"],
   "extends": "./node_modules/react-redux-typescript-scripts/tsconfig.json",
   "compilerOptions": {}
 }
