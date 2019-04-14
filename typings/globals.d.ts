@@ -8,9 +8,9 @@ declare interface NodeModule {
 }
 
 declare interface System {
-  import<T = any>(module: string): Promise<T>
+  import<T = any>(module: string): Promise<T>;
 }
 declare var System: System;
 
-declare const process: any;
-declare const require: any;
+// declare const process: any;
+// declare const require: any;
