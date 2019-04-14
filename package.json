@@ -12,7 +12,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "reinstall": "rm -rf ./node_modules && yarn install",
+    "reinstall": "rm -rf ./node_modules && npm install",
     "ci-check": "npm run lint && npm run tsc && npm run test",
     "lint": "tslint -p ./",
     "tsc": "tsc -p ./ --noEmit",
