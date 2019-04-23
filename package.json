@@ -27,18 +27,18 @@
     "@types/react": "16.8.14",
     "@types/react-dom": "16.8.4",
     "@types/react-redux": "7.0.8",
-    "@types/react-router-dom": "4.3.2",
-    "@types/react-router-redux": "5.0.18",
+    "@types/react-router": "4.4.5",
     "axios": "0.18.0",
+    "connected-react-router": "6.4.0",
     "cuid": "2.1.6",
+    "formik": "1.5.2",
     "prettier": "1.17.0",
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-redux": "7.0.2",
     "react-redux-typescript-scripts": "1.5.0",
-    "react-router-dom": "5.0.0",
-    "react-router-redux": "5.0.0-alpha.8",
+    "react-router": "5.0.0",
     "react-scripts": "3.0.0",
     "react-testing-library": "6.1.2",
     "redux": "4.0.1",
@@ -48,7 +48,8 @@
     "tslib": "1.9.3",
     "typesafe-actions": "4.1.2",
     "typescript": "3.4.5",
-    "utility-types": "3.5.0"
+    "utility-types": "3.5.0",
+    "yup": "0.27.0"
   },
   "browserslist": {
     "production": [
@@ -61,5 +62,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/yup": "0.26.12"
   }
 }
