@@ -1,6 +1,7 @@
 declare module 'MyModels' {
-  export type Todo = {
+  export type Article = {
     id: string;
     title: string;
+    content: string;
   };
 }

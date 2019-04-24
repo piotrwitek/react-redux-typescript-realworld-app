@@ -1,7 +1,7 @@
 import { routerActions } from 'connected-react-router';
-import * as todosActions from '../features/todos/actions';
+import * as articlesActions from '../features/articles/actions';
 
 export default {
   router: routerActions,
-  todos: todosActions,
+  articles: articlesActions,
 };

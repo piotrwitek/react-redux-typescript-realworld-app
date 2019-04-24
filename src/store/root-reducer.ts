@@ -2,12 +2,12 @@ import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import { History } from 'history';
 
-import reducer from '../features/todos/reducer';
+import articles from '../features/articles/reducer';
 
 const rootReducer = (history: History<any>) =>
   combineReducers({
     router: connectRouter(history),
-    todos: reducer,
+    articles,
   });
 
 export default rootReducer;

@@ -1,10 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 
-import TodosView from '../features/todos/components/TodosView';
+import ArticleList from '../features/articles/components/ArticleList';
+import ArticleActionsMenu from '../features/articles/components/ArticleActionsMenu';
 import Main from '../layouts/Main';
 
 export default () => (
-  <Main>
-    <TodosView />
+  <Main renderActionsMenu={() => <ArticleActionsMenu />}>
+    <ArticleList />
   </Main>
 );
