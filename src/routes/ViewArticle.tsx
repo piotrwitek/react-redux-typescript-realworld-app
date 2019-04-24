@@ -1,20 +1,28 @@
 import { RootState } from 'MyTypes';
-import React, { useCallback } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import { match } from 'react-router';
 
 import ArticleView from '../features/articles/components/ArticleView';
 import Main from '../layouts/Main';
 import BackLink from '../components/BackLink';
-import { useMappedState } from 'redux-react-hook';
 
-export default ({ articleId }: { articleId: string }) => {
-  const mapState = useCallback(
-    (state: RootState) => ({
-      article: state.articles.articles.find(i => i.id === articleId),
-    }),
-    [articleId]
-  );
+type OwnProps = {
+  match: match<{ articleId: string }>;
+};
 
-  const { article } = useMappedState(mapState);
+const mapStateToProps = (state: RootState, ownProps: OwnProps) => ({
+  article: state.articles.articles.find(
+    i => i.id === ownProps.match.params.articleId
+  ),
+});
+
+type Props = ReturnType<typeof mapStateToProps>;
+
+const ViewArticle = ({ article }: Props) => {
+  if (!article) {
+    return <div>'Article doesn\'t exist'</div>;
+  }
 
   return (
     <Main renderActionsMenu={() => <BackLink />}>
@@ -22,3 +30,5 @@ export default ({ articleId }: { articleId: string }) => {
     </Main>
   );
 };
+
+export default connect(mapStateToProps)(ViewArticle);

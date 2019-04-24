@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 import './Main.css';
 import logo from '../assets/logo.svg';
@@ -19,14 +20,9 @@ const Main: FC<Props> = ({ children, renderActionsMenu }) => (
       >
         <FlexRow align="center">
           <img src={logo} className="App-logo" alt="logo" />
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <Link className="App-link" to="/">
+            Demo App
+          </Link>
         </FlexRow>
         {renderActionsMenu && renderActionsMenu()}
       </FlexRow>

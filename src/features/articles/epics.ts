@@ -43,13 +43,16 @@ export const updateArticlesEpic: RootEpic = (action$, state$, { api }) =>
     )
   );
 
-export const deleteArticlesEpic: RootEpic = (action$, state$, { api }) =>
+export const deleteArticlesEpic: RootEpic = (action$, state$, { api, toast }) =>
   action$.pipe(
     filter(isActionOf(deleteArticleAsync.request)),
     switchMap(action =>
       from(api.articles.deleteArticle(action.payload)).pipe(
         map(deleteArticleAsync.success),
-        catchError(message => of(deleteArticleAsync.failure(message)))
+        catchError(message => {
+          toast.error(message);
+          return of(deleteArticleAsync.failure(action.payload));
+        })
       )
     )
   );

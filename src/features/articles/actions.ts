@@ -23,4 +23,4 @@ export const deleteArticleAsync = createAsyncAction(
   'DELETE_ARTICLE_REQUEST',
   'DELETE_ARTICLE_SUCCESS',
   'DELETE_ARTICLE_FAILURE'
-)<Article, Article[], string>();
+)<Article, Article[], Article>();

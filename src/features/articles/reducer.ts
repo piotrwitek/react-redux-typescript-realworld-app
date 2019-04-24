@@ -35,6 +35,9 @@ const reducer = combineReducers({
     )
     .handleAction(deleteArticleAsync.request, (state, action) =>
       state.filter(i => i.id !== action.payload.id)
+    )
+    .handleAction(deleteArticleAsync.failure, (state, action) =>
+      state.concat(action.payload)
     ),
 });
 

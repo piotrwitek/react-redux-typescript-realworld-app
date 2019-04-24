@@ -1,45 +1,36 @@
-import React, { useCallback } from 'react';
+import { Article } from 'MyModels';
+import React from 'react';
 import areEqual from 'fast-deep-equal';
-import { useDispatch } from 'redux-react-hook';
+import { connect } from 'react-redux';
 
 import { deleteArticleAsync } from '../actions';
-import { Article } from 'MyModels';
 import { getPath } from '../../../router-paths';
 import FlexRow from '../../../components/FlexRow';
+import { Link } from 'react-router-dom';
 
-interface Props {
+const dispatchProps = {
+  deleteArticle: deleteArticleAsync.request,
+};
+
+type Props = typeof dispatchProps & {
   article: Article;
-}
+};
 
-const ArticleListItem = React.memo<Props>(({ article }) => {
-  const dispatch = useDispatch();
-  const deleteArticle = useCallback(
-    (ev: any) => {
-      ev.preventDefault();
-      return dispatch(deleteArticleAsync.request(article));
-    },
-    [article, dispatch]
-  );
-
+const ArticleListItem = React.memo<Props>(({ article, deleteArticle }) => {
   return (
-    <FlexRow itemsSpacing={20}>
-      <div style={getStyle()}>
-        {article.title}
-        <a
-          href={'disabled'}
-          onClick={deleteArticle}
-          style={{ color: 'darkred', float: 'right', cursor: 'pointer' }}
+    <FlexRow>
+      <div style={getStyle()}>{article.title}</div>
+      <FlexRow itemsSpacing={20}>
+        <Link to={getPath('viewArticle', article.id)}>View</Link>
+        <Link to={getPath('editArticle', article.id)}>Edit</Link>
+        <div
+          className="link"
+          onClick={() => deleteArticle(article)}
+          style={{ color: 'darkred' }}
         >
           Delete
-        </a>{' '}
-        |
-        <a
-          href={getPath('editArticle', article.id)}
-          style={{ float: 'right', cursor: 'pointer' }}
-        >
-          Edit
-        </a>
-      </div>
+        </div>
+      </FlexRow>
     </FlexRow>
   );
 }, areEqual);
@@ -47,6 +38,10 @@ const ArticleListItem = React.memo<Props>(({ article }) => {
 const getStyle = (): React.CSSProperties => ({
   overflowX: 'hidden',
   textOverflow: 'ellipsis',
+  width: '300px',
 });
 
-export default ArticleListItem;
+export default connect(
+  null,
+  dispatchProps
+)(ArticleListItem);

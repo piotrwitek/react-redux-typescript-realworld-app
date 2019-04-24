@@ -1,7 +1,8 @@
+import { RootState } from 'MyTypes';
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { RootState } from 'MyTypes';
 import { getPath } from '../../../router-paths';
 
 const mapStateToProps = (state: RootState) => ({});
@@ -15,7 +16,7 @@ class ArticleActionsMenu extends React.Component<Props, State> {
   render() {
     return (
       <section>
-        <a href={getPath('addArticle')}>Create article</a>
+        <Link to={getPath('addArticle')}>Create article</Link>
       </section>
     );
   }
