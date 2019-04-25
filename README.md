@@ -1,5 +1,13 @@
 🚧🚧🚧 UNDER CONSTRUCTION 🚧🚧🚧
 
+**DEMO: [LINK](https://codesandbox.io/s/github/piotrwitek/react-redux-typescript-realworld-app)**
+
+> WARNING: _Codesandbox not working currently because it's not supporting react-scripts v3 yet_
+
+Features:
+- Create React App` v3.0
+- TypeScript v3.4
+
 ## Available Scripts
 
 ### `npm start`
