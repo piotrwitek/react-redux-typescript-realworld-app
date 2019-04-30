@@ -1,10 +1,39 @@
-🚧🚧🚧 UNDER CONSTRUCTION 🚧🚧🚧
+<div align="center">
 
-**DEMO: [LINK](https://react-redux-typescript-realworld-app.netlify.com/)**
+# React, Redux, TypeScript - RealWorld App
 
-Features:
-- Create React App` v3.0
-- TypeScript v3.4
+## 🚧🚧🚧 UNDER CONSTRUCTION 🚧🚧🚧
+
+### **LIVE DEMO: [LINK](https://react-redux-typescript-realworld-app.netlify.com/)**
+
+_Reference implementation of RealWorld [JAMStack](https://jamstack.org/) Application based on ["React, Redux, TypeScript Guide"](https://github.com/piotrwitek/react-redux-typescript-guide)
+and [Create React App v3.0](https://facebook.github.io/create-react-app/)._
+
+</div>
+
+---
+
+## Features Roadmap:
+- [x] Routing with React-Router
+- [ ] User Identity
+  - [ ] External providers (Google, Github, Bitbucket)
+  - [ ] Registration / Authentication
+- [x] Cross-cutting Application Services
+  - [x] Local Storage
+  - [x] Client Logger
+  - [x] Toasts
+  - [ ] Analytics
+- [x] Feature Folders
+  - [x] `/articles` - Articles listing with CRUD Operations
+  - [ ] `/realtime-monitoring` - Realtime monitoring of connected users using Websockets
+- [x] REST API Integration (API Client)
+- [ ] WebSockets Integration
+- [ ] Serverless Lambda Functions (Netlify Functions)
+- [ ] Utilities (HOC, Hooks, Media Queries...)
+- [ ] Typesafe Styling/Theming with CSSinJS (`Emotion`)
+- [ ] ...
+
+---
 
 ## Available Scripts
 
