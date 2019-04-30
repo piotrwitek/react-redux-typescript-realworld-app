@@ -5,6 +5,7 @@
   "private": true,
   "author": "Piotr Witek <piotrek.witek@gmail.com> (http://piotrwitek.github.io/)",
   "repository": "https://github.com/piotrwitek/react-redux-typescript-realworld-app.git",
+  "homepage": "https://react-redux-typescript-realworld-app.netlify.com/",
   "license": "MIT",
   "main": "src/index.tsx",
   "scripts": {
