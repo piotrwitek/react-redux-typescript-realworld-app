@@ -9,8 +9,12 @@
   "license": "MIT",
   "main": "src/index.tsx",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start:client": "react-scripts start",
+    "start:lambdas": "netlify-lambda serve lambdas/src",
+    "start": "concurrently 'npm run start:client' 'npm run start:lambdas'",
+    "build:client": "react-scripts build",
+    "build:lambdas": "netlify-lambda build lambdas/src",
+    "build": "concurrently 'npm run build:client' 'npm run build:lambdas'",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "reinstall": "rm -rf ./node_modules && npm install",
@@ -18,12 +22,14 @@
     "prettier": "prettier --list-different 'src/**/*.ts' || (echo '\nPlease run the following command to fix:\nnpm run prettier:fix\n'; exit 1)",
     "prettier:fix": "prettier --write 'src/**/*.ts'",
     "tsc": "tsc -p ./ --noEmit",
-    "tsc:watch": "tsc -p ./ --noEmit -w"
+    "tsc:watch": "tsc -p ./ --noEmit -w",
+    "deploy": "openode deploy"
   },
   "dependencies": {
     "@babel/polyfill": "7.4.3",
     "@emotion/core": "10.0.10",
     "@emotion/styled": "10.0.10",
+    "@types/aws-lambda": "8.10.24",
     "@types/jest": "24.0.11",
     "@types/node": "11.13.7",
     "@types/prop-types": "15.7.1",
@@ -36,6 +42,7 @@
     "cuid": "2.1.6",
     "fast-deep-equal": "2.0.1",
     "formik": "1.5.2",
+    "netlify-lambda": "1.4.5",
     "prettier": "1.17.0",
     "prop-types": "15.7.2",
     "react": "16.8.6",
@@ -69,6 +76,7 @@
     ]
   },
   "devDependencies": {
-    "@types/yup": "0.26.12"
+    "@types/yup": "0.26.12",
+    "concurrently": "4.1.0"
   }
 }
